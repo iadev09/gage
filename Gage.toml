@@ -5,7 +5,7 @@ hostname = "gage.home"
 [service.tls]
 key_path = "etc/ssl/gage.home/privkey.pem"
 cert_path = "etc/ssl/gage.home/fullchain.pem"
-protocols = ["Http1", "Http2"]
+protocols = ["Http2","Http11"]  # order is important for alpn precedence
 
 [service.ports]
 http = 80

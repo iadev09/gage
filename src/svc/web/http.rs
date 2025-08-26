@@ -11,7 +11,7 @@ pub async fn start_http(state: SharedState) -> crate::Result {
 
     let address = format!("{}:{}", &service_config.address, ports.http);
 
-    log::info!("🚀 Starting HTTP/1 redirect server on {}", &address);
+    log::info!("🚀 Starting HTTP (redirect) server on {}", &address);
 
     let listener = TcpListener::bind(address.as_str()).await.map_err(|e| {
         log::error!("Failed to bind HTTP/1 TCP listener on {}: {:?}", &address, e);
@@ -23,10 +23,10 @@ pub async fn start_http(state: SharedState) -> crate::Result {
     axum::serve(listener, app)
         .with_graceful_shutdown(async move {
             shutdown_token.cancelled().await;
-            log::warn!("🔸 HTTP/1 Server shutting down...");
+            log::warn!("🔸 HTTP (redirect) Server shutting down...");
         })
         .await?;
 
-    log::info!("❎ HTTP/1 (redirect) Server shutdown successfully");
+    log::info!("❎ HTTP (redirect) Server shutdown successfully");
     Ok(())
 }

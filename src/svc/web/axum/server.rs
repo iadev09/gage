@@ -1,11 +1,11 @@
-use std::{os::macos::raw::stat, sync::Arc, time::Duration};
+use std::{net::SocketAddr, sync::Arc, time::Duration};
 
-use axum::{Router, ServiceExt};
 use axum_server::{tls_rustls::RustlsConfig, Handle};
 use hyper_util::rt::TokioTimer;
 use rustls::ServerConfig;
 
-use crate::{svc::web::tls, SharedState};
+use super::app::create_app;
+use crate::SharedState;
 
 pub async fn start_https(
     state: SharedState,
@@ -15,8 +15,10 @@ pub async fn start_https(
     let ports = &service_config.ports;
     let address = format!("{}:{}", &service_config.address, ports.https);
 
+    let config = &service_config.axum_config();
+
     log::debug!("🚀 Starting HTTP/2 server on {}", &address);
-    let handle = create_handle(state.clone());
+    let handle = create_handle(state.clone(), config.graceful_timeout);
 
     let listen_handle = handle.clone();
     tokio::spawn(async move {
@@ -25,9 +27,14 @@ pub async fn start_https(
         }
     });
 
-    let mut server = axum_server::bind_rustls(address.parse()?, rustls_config);
+    let app = create_app(state.clone());
+
+    let socket_address: SocketAddr = address.parse().unwrap();
+
+    let rustls_config = RustlsConfig::from_config(Arc::new(rustls_config));
+    let mut server = axum_server::bind_rustls(socket_address, rustls_config);
     let mut builder = server.http_builder().http2();
-    let config = &service_config.axum_config();
+
     builder
         // .enable_connect_protocol() // on web_socket tunnel proxy
         .auto_date_header(true)
@@ -45,7 +52,7 @@ pub async fn start_https(
 
     server.handle(handle.clone()).serve(app.into_make_service()).await?;
 
-    log::info!("❎ HTTP/2 (actix) Server shutdown successfully");
+    log::info!("❎ HTTP/2 (axum) Server shutdown successfully");
     Ok(())
 }
 
@@ -56,10 +63,9 @@ fn create_handle(
     let handle = Handle::new();
     let shutdown_handle = handle.clone();
     tokio::spawn(async move {
-        if state.shutdown_token().cancelled().await {
-            log::warn!("🛑 HTTP/2 Server shutting down...");
-            shutdown_handle.graceful_shutdown(graceful_timeout);
-        }
+        state.shutdown_token().cancelled().await;
+        log::warn!("🛑 HTTP/2 Server shutting down...");
+        shutdown_handle.graceful_shutdown(graceful_timeout);
     });
     handle
 }

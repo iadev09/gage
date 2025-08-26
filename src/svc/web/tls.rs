@@ -29,7 +29,7 @@ pub struct TlsConfig {
 
 #[derive(Debug, Deserialize)]
 enum Protocol {
-    Http1,
+    Http11,
     Http2,
     Http3
 }
@@ -37,7 +37,7 @@ enum Protocol {
 impl Protocol {
     fn alpn_protocol(&self) -> &[u8] {
         match self {
-            Protocol::Http1 => b"http/1.1",
+            Protocol::Http11 => b"http/1.1",
             Protocol::Http2 => b"h2",
             Protocol::Http3 => b"http/3"
         }

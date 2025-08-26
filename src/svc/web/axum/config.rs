@@ -6,9 +6,10 @@ use serde_with::serde_as;
 use crate::config::ServiceConfig;
 use crate::ctx::utils::deserialize_duration;
 
+#[allow(unused)]
 #[serde_as]
 #[derive(Deserialize)]
-pub(crate) struct HyperConfig {
+pub struct HyperConfig {
     pub max_concurrent_streams: Option<u32>,
 
     #[serde(deserialize_with = "deserialize_duration")]

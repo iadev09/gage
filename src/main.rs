@@ -24,7 +24,20 @@ async fn main() -> Result {
 
     let state = State::shared()?;
 
-    let listener = ntex::rt::spawn(shutdown::listen(state.clone()));
+    let listener = {
+        #[cfg(feature = "ntex")]
+        {
+            ntex::rt::spawn(shutdown::listen(state.clone()))
+        }
+        #[cfg(all(not(feature = "ntex"), feature = "actix"))]
+        {
+            actix_web::rt::spawn(shutdown::listen(state.clone()))
+        }
+        #[cfg(all(not(feature = "ntex"), not(feature = "actix")))]
+        {
+            tokio::spawn(shutdown::listen(state.clone()))
+        }
+    };
 
     tls::install_default_provider();
     let service_config = state.config_ref().service_config();
