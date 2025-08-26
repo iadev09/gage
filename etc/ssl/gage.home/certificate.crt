@@ -1,0 +1,89 @@
+-----BEGIN CERTIFICATE-----
+MIID8TCCAtmgAwIBAgIEJ037NDANBgkqhkiG9w0BAQsFADCBpjELMAkGA1UEBhMC
+QloxGDAWBgNVBAgMD0JlbGl6ZSBEaXN0aW5jdDEPMA0GA1UEBwwGQmVsaXplMSIw
+IAYDVQQKDBlTLlAuUS5SLiBJTlRFUkFDUlRJVkUgTFREMQ8wDQYDVQQLDAZCZWRs
+aXMxIzAhBgkqhkiG9w0BCQEWFHN5c2FkbWluQG54bWFuZ28uY29tMRIwEAYDVQQD
+DAlCZWRsaXMgQ0EwHhcNMjUwODA5MDU1MzQ4WhcNMjYwODA5MDU1MzQ4WjA4MSIw
+IAYDVQQKDBlTLlAuUS5SLiBJTlRFUkFDUlRJVkUgTFREMRIwEAYDVQQDDAlnYWdl
+LmhvbWUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDD4ve4DKy5oo2T
+GZWpVMeVnB0z5yGsZJrL4BHUyNH7izSdKtLUl05ih1ml63sgRzU65vfT9adrwPOK
+q/2D4n5/D7PahaxgvBwrF47u9x3917irRDXqNC1Z/pLynY9zRfEVK4v194LHmI1L
+WX1aqFJSaLRhiRJT5XAJ+kr02+MUyMgIgMx6iHLLtAdYdIPtQh8JGSZ99LqLONni
+ZZJDEIDJLqzDIfvizlmMsxT07DoUDiuWWm/XayGqF8SrReFgSAflvjXW2F8nlBsn
+yqWuMdZV+QdeH2YI12Jy9gNLKmOul0vp0AHXd6HAXjo4SqzUzIoMY1Xr1S44LmTl
+vDqYm0VDAgMBAAGjgZMwgZAwCwYDVR0PBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUF
+BwMBBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQtQuQYp1jGsB+M
+0h6mpfEBClnVlzAfBgNVHSMEGDAWgBTveUlJg4lUCIiyGGBnRnhHsDBiRjAUBgNV
+HREEDTALgglnYWdlLmhvbWUwDQYJKoZIhvcNAQELBQADggEBACQjVor8zRp74R1K
+Mj031V1L2NCWF7vf3RzhASddpsXq5jjv1KKlYpFiXnAKKDzH9vWihDOF2OZPPCuG
+liSTqDA8Z4slznjnhQleWiuiZ9J9JGwmay5nAZ32ito2Gq8+NH75pykP/xEHPuwM
+Fb87ACYzcFlnThJMNTTR/8bdJ/0T1Z3FwpP5Wmn+zEqcB/KKF6RVAl2RdUzA3uJN
+NTAuXFSjITNNA/kK9tQ/60jz7glx7xwX8Py1NGnKBsxEG+lpmvaLv+gKhuOm1MQ3
+cdwThCgqkzatOYkv2gZ3r418cLeMFVrYhaaie7f3Tlvce2nfT5oPW+Twp9tD8Eay
+u2zvnGc=
+-----END CERTIFICATE-----
+
+
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 659422004 (0x274dfb34)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=BZ, ST=Belize Distinct, L=Belize, O=S.P.Q.R. INTERACRTIVE LTD, OU=Bedlis, emailAddress=sysadmin@nxmango.com, CN=Bedlis CA
+        Validity
+            Not Before: Aug  9 05:53:48 2025 GMT
+            Not After : Aug  9 05:53:48 2026 GMT
+        Subject: O=S.P.Q.R. INTERACRTIVE LTD, CN=gage.home
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:c3:e2:f7:b8:0c:ac:b9:a2:8d:93:19:95:a9:54:
+                    c7:95:9c:1d:33:e7:21:ac:64:9a:cb:e0:11:d4:c8:
+                    d1:fb:8b:34:9d:2a:d2:d4:97:4e:62:87:59:a5:eb:
+                    7b:20:47:35:3a:e6:f7:d3:f5:a7:6b:c0:f3:8a:ab:
+                    fd:83:e2:7e:7f:0f:b3:da:85:ac:60:bc:1c:2b:17:
+                    8e:ee:f7:1d:fd:d7:b8:ab:44:35:ea:34:2d:59:fe:
+                    92:f2:9d:8f:73:45:f1:15:2b:8b:f5:f7:82:c7:98:
+                    8d:4b:59:7d:5a:a8:52:52:68:b4:61:89:12:53:e5:
+                    70:09:fa:4a:f4:db:e3:14:c8:c8:08:80:cc:7a:88:
+                    72:cb:b4:07:58:74:83:ed:42:1f:09:19:26:7d:f4:
+                    ba:8b:38:d9:e2:65:92:43:10:80:c9:2e:ac:c3:21:
+                    fb:e2:ce:59:8c:b3:14:f4:ec:3a:14:0e:2b:96:5a:
+                    6f:d7:6b:21:aa:17:c4:ab:45:e1:60:48:07:e5:be:
+                    35:d6:d8:5f:27:94:1b:27:ca:a5:ae:31:d6:55:f9:
+                    07:5e:1f:66:08:d7:62:72:f6:03:4b:2a:63:ae:97:
+                    4b:e9:d0:01:d7:77:a1:c0:5e:3a:38:4a:ac:d4:cc:
+                    8a:0c:63:55:eb:d5:2e:38:2e:64:e5:bc:3a:98:9b:
+                    45:43
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                2D:42:E4:18:A7:58:C6:B0:1F:8C:D2:1E:A6:A5:F1:01:0A:59:D5:97
+            X509v3 Authority Key Identifier: 
+                EF:79:49:49:83:89:54:08:88:B2:18:60:67:46:78:47:B0:30:62:46
+            X509v3 Subject Alternative Name: 
+                DNS:gage.home
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        24:23:56:8a:fc:cd:1a:7b:e1:1d:4a:32:3d:37:d5:5d:4b:d8:
+        d0:96:17:bb:df:dd:1c:e1:01:27:5d:a6:c5:ea:e6:38:ef:d4:
+        a2:a5:62:91:62:5e:70:0a:28:3c:c7:f6:f5:a2:84:33:85:d8:
+        e6:4f:3c:2b:86:96:24:93:a8:30:3c:67:8b:25:ce:78:e7:85:
+        09:5e:5a:2b:a2:67:d2:7d:24:6c:26:6b:2e:67:01:9d:f6:8a:
+        da:36:1a:af:3e:34:7e:f9:a7:29:0f:ff:11:07:3e:ec:0c:15:
+        bf:3b:00:26:33:70:59:67:4e:12:4c:35:34:d1:ff:c6:dd:27:
+        fd:13:d5:9d:c5:c2:93:f9:5a:69:fe:cc:4a:9c:07:f2:8a:17:
+        a4:55:02:5d:91:75:4c:c0:de:e2:4d:35:30:2e:5c:54:a3:21:
+        33:4d:03:f9:0a:f6:d4:3f:eb:48:f3:ee:09:71:ef:1c:17:f0:
+        fc:b5:34:69:ca:06:cc:44:1b:e9:69:9a:f6:8b:bf:e8:0a:86:
+        e3:a6:d4:c4:37:71:dc:13:84:28:2a:93:36:ad:39:89:2f:da:
+        06:77:af:8d:7c:70:b7:8c:15:5a:d8:85:a6:a2:7b:b7:f7:4e:
+        5b:dc:7b:69:df:4f:9a:0f:5b:e4:f0:a7:db:43:f0:46:b2:bb:
+        6c:ef:9c:67

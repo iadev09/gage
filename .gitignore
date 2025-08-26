@@ -1,0 +1,6 @@
+/target
+/.idea
+/.env
+/.vscode
+/.nvim.log
+.DS_Store

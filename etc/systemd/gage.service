@@ -1,0 +1,39 @@
+[Unit]
+Description=WebToken Service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+# Environment variables
+Environment="SERVANT_HOME=/home/servant"
+Environment="RUST_LOG=info"
+
+# Ensure Claviron has permission to bind to port 80
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+# Start the application
+ExecStart=/home/servant/bin/gage etc/Gage.toml
+
+# Set working directory
+WorkingDirectory=/home/servant
+
+# Runtime settings
+RuntimeDirectory=servant/gage
+RuntimeDirectoryPreserve=no
+LogsDirectory=servant
+
+# Run as non-root user
+User=servant
+Group=web
+
+# Restart on failure
+Restart=on-failure
+RestartSec=5
+
+# Ensure logs are flushed before shutdown
+TimeoutStopSec=10
+KillMode=mixed
+SendSIGKILL=no
+
+[Install]
+WantedBy=multi-user.target

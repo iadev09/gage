@@ -1,0 +1,77 @@
+[package]
+name = "gage"
+version = "0.1.0"
+edition = "2021"
+
+
+[features]
+default = []
+axum = []
+actix = []
+ntex = []
+
+[dependencies]
+
+# OAuth2 server library
+#oxide-auth = "0.6"           # core OAuth2 primitives
+#oxide-auth-actix = "0.3.0"     # Actix Web integration for oxide-auth
+#
+#
+## JWT / signing for OIDC tokens
+#biscuit = "0.7"              # or jsonwebtoken = "9"
+
+#Encryption library
+rustls = "0.23.31"
+base64 = "0.22.1"
+
+# Web framework
+
+ntex = { version = "2.12.1", default-features = true, features = ["tokio", "rustls"] }
+
+ntex-session = "2"
+ntex-files = "2.1.0"
+ntex-rt = "0.4.13"
+futures = "0.3"
+
+actix-web = { version = "4", features = ["rustls-0_23"] }
+actix-rt = "2" # runtime helpers (spawns, delays, etc.)
+
+axum = { version = "0.8.4", features = ["http2", "macros"] }
+axum-server = { version = "0.7.2", features = ["tls-rustls"] }
+#hyper = { version = "1.6", features = ["server", "http2"] }
+hyper-util = { version = "0.1.14", features = ["tokio", "server", "http2"] }
+
+#tower = "0.5.2"
+#tower-http = { version = "0.6.2", features = ["cors"] }
+#tower-service = "0.3.3"
+
+# Serialization/Desiralization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_with = { version = "3.12.0", features = ["chrono_0_4"] }
+toml = "0.9.5"
+humantime = "2.1.0"
+chrono = { version = "0.4", features = ["serde"] }
+
+# Async utilities
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tokio-util = "0.7.16"
+
+# Error handling
+thiserror = "1"
+
+#ctx utils
+# Logging
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+log = "0.4"
+
+dotenvy = "^0.15.7"
+hostname = "0.4.1"
+clap = { version = "4", features = ["derive", "env"] }
+heck = "0.5.0"
+ntex-macros = "0.1.4"
+ntex-http = "0.1.14"
+hyper = "1.6.0"
+
+
+

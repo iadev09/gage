@@ -1,0 +1,55 @@
+[service]
+address = "0.0.0.0"
+hostname = "gage.home"
+
+[service.tls]
+key_path = "etc/ssl/gage.home/privkey.pem"
+cert_path = "etc/ssl/gage.home/fullchain.pem"
+protocols = ["Http1", "Http2"]
+
+[service.ports]
+http = 80
+https = 443
+
+
+[service.ntex]
+max_conn = 25000
+max_conn_rate = 256
+shutdown_timeout = "10s"
+client_timeout = "3s"  # header timeut: To disable timeout set value to 0.
+disconnect_timeout = "5s" # To disable timeout set value to 0.
+ssl_handshake_timeout = "5s"
+keep_alive_interval = "10s"
+
+[service.ntex.headers_read_rate]
+timeout = "1s"
+max_timeout = "5s"
+rate = 1
+
+
+[service.actix]
+max_connections = 100
+max_connection_rate = 100
+tls_handshake_timeout = "2s"
+keep_alive_interval = "10s"
+shutdown_timeout = 5 # as u64 seconds
+client_disconnect_timeout = "5000ms" # duration  - To disable timeout set value to 0.
+client_request_timeout = "10s" # duration -
+
+[service.axum]
+graceful_timeout = "10s"
+max_concurrent_streams = 32
+max_lifetime = "5m"
+idle_timeout = "10s"
+keep_alive_timeout = "2s"
+keep_alive_interval = "10s"
+
+[service.quinn]
+max_concurrent_uni_streams = 32
+max_concurrent_bidi_streams = 32
+max_idle_timeout = "10s"
+keep_alive_interval = "5s"
+graceful_timeout = "10s"
+
+
+
