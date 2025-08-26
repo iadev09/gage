@@ -6,7 +6,7 @@ pub fn is_running_under_systemd() -> bool {
     std::env::var("INVOCATION_ID").is_ok()
         || std::env::var("JOURNAL_STREAM").is_ok()
 }
-
+#[allow(unused)]
 pub fn deserialize_duration<'de, D, T>(deserializer: D) -> Result<T, D::Error>
 where
     D: Deserializer<'de>,

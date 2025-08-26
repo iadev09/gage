@@ -5,7 +5,7 @@ edition = "2021"
 
 
 [features]
-default = ["axum"]
+default = []
 axum = []
 actix = []
 ntex = []
